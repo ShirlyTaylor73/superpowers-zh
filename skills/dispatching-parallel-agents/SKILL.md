@@ -1,9 +1,13 @@
 ---
 name: dispatching-parallel-agents
-description: 当面对 2 个以上可以独立进行、无共享状态或顺序依赖的任务时使用
+description: 非 plan 场景下，2+ 个独立任务需要并行派发时使用（典型：多个独立 bug 排查、多文件并行验证、多分支批量重试）。Plan 驱动场景请使用 subagent-driven-development。
 ---
 
 # 并行分派智能体
+
+> **如果你正在执行一个 plan（来自 writing-plans），不要用本 skill。**
+> `subagent-driven-development` 已经原生包含 wave 化并行调度（wave 内并发实现 + wave 间阻塞 gate + Wave FINAL 四审）。
+> 本 skill 用于 plan 之外的临时并行派发场景（多 bug 排查、多文件验证、多分支批量重试等）。
 
 ## 概述
 
