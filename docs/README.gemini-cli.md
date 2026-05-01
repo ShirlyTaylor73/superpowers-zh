@@ -14,7 +14,7 @@ npx superpowers-zh
 ## 手动安装
 
 ```bash
-git clone https://github.com/jnMetaCode/superpowers-zh.git
+git clone https://github.com/ShirlyTaylor73/superpowers-zh.git
 cp -r superpowers-zh/skills /your/project/.gemini/skills
 ```
 
@@ -60,6 +60,6 @@ cp superpowers-zh/gemini-extension.json ~/.gemini/extensions/superpowers-zh/
 
 ## 获取帮助
 
-- 提交 Issue：https://github.com/jnMetaCode/superpowers-zh/issues
-- 项目主页：https://github.com/jnMetaCode/superpowers-zh
+- 提交 Issue：https://github.com/ShirlyTaylor73/superpowers-zh/issues
+- 项目主页：https://github.com/ShirlyTaylor73/superpowers-zh
 - Gemini CLI 文档：https://github.com/google-gemini/gemini-cli

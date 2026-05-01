@@ -8,7 +8,7 @@
 
 ```json
 {
-  "plugin": ["superpowers@git+https://github.com/jnMetaCode/superpowers-zh.git"]
+  "plugin": ["superpowers@git+https://github.com/ShirlyTaylor73/superpowers-zh.git"]
 }
 ```
 
@@ -67,7 +67,7 @@ description: 当 [条件] 时使用 - [功能描述]
 
 ```json
 {
-  "plugin": ["superpowers@git+https://github.com/jnMetaCode/superpowers-zh.git#v1.0.0"]
+  "plugin": ["superpowers@git+https://github.com/ShirlyTaylor73/superpowers-zh.git#v1.0.0"]
 }
 ```
 
@@ -103,6 +103,6 @@ description: 当 [条件] 时使用 - [功能描述]
 
 ## 获取帮助
 
-- 提交 Issue：https://github.com/jnMetaCode/superpowers-zh/issues
-- 项目主页：https://github.com/jnMetaCode/superpowers-zh
+- 提交 Issue：https://github.com/ShirlyTaylor73/superpowers-zh/issues
+- 项目主页：https://github.com/ShirlyTaylor73/superpowers-zh
 - OpenCode 文档：https://opencode.ai/docs/

@@ -14,7 +14,7 @@ npx superpowers-zh
 ## 手动安装
 
 ```bash
-git clone https://github.com/jnMetaCode/superpowers-zh.git
+git clone https://github.com/ShirlyTaylor73/superpowers-zh.git
 mkdir -p /your/project/.antigravity/skills
 cp -r superpowers-zh/skills/* /your/project/.antigravity/skills/
 ```
@@ -89,5 +89,5 @@ npx superpowers-zh
 
 ## 获取帮助
 
-- 提交 Issue：https://github.com/jnMetaCode/superpowers-zh/issues
+- 提交 Issue：https://github.com/ShirlyTaylor73/superpowers-zh/issues
 - Antigravity 文档：https://antigravity.google/docs/rules-workflows

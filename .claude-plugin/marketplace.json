@@ -2,8 +2,8 @@
   "name": "superpowers-zh",
   "description": "AI 编程超能力中文增强版：20 个 skills，支持 Claude Code / Hermes Agent / Cursor / Claw Code 等 17 款工具",
   "owner": {
-    "name": "jnMetaCode",
-    "url": "https://github.com/jnMetaCode"
+    "name": "ShirlyTaylor73",
+    "url": "https://github.com/ShirlyTaylor73"
   },
   "plugins": [
     {
@@ -12,8 +12,8 @@
       "version": "1.1.8",
       "source": "./",
       "author": {
-        "name": "jnMetaCode",
-        "url": "https://github.com/jnMetaCode"
+        "name": "ShirlyTaylor73",
+        "url": "https://github.com/ShirlyTaylor73"
       }
     }
   ]

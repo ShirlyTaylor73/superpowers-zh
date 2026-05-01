@@ -392,7 +392,7 @@ function showHelp() {
       npx superpowers-zh --tool cursor
       npx superpowers-zh --tool trae
 
-  项目：https://github.com/jnMetaCode/superpowers-zh
+  项目：https://github.com/ShirlyTaylor73/superpowers-zh
 `);
 }
 
@@ -408,7 +408,7 @@ function installForTarget(target) {
       `\n  这通常是 npx 缓存目录权限或路径问题。请尝试：\n` +
       `    1. 清理缓存后重试: npm cache clean --force && npx superpowers-zh\n` +
       `    2. 或全局安装: npm i -g superpowers-zh && superpowers-zh\n` +
-      `    3. 或手动克隆复制: 见 https://github.com/jnMetaCode/superpowers-zh#方式二手动安装`
+      `    3. 或手动克隆复制: 见 https://github.com/ShirlyTaylor73/superpowers-zh#方式二手动安装`
     );
   }
   console.log(`  ✅ ${target.name}: ${count} 个 skills -> ${dest}`);

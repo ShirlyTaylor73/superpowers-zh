@@ -10,7 +10,7 @@
 
 ```json
 {
-  "plugin": ["superpowers@git+https://github.com/jnMetaCode/superpowers-zh.git"]
+  "plugin": ["superpowers@git+https://github.com/ShirlyTaylor73/superpowers-zh.git"]
 }
 ```
 
@@ -52,7 +52,7 @@ Superpowers 会在你重启 OpenCode 时自动更新。
 
 ```json
 {
-  "plugin": ["superpowers@git+https://github.com/jnMetaCode/superpowers-zh.git#v1.0.0"]
+  "plugin": ["superpowers@git+https://github.com/ShirlyTaylor73/superpowers-zh.git#v1.0.0"]
 }
 ```
 
@@ -79,5 +79,5 @@ Superpowers 会在你重启 OpenCode 时自动更新。
 
 ## 获取帮助
 
-- 报告问题：https://github.com/jnMetaCode/superpowers-zh/issues
-- 完整文档：https://github.com/jnMetaCode/superpowers-zh
+- 报告问题：https://github.com/ShirlyTaylor73/superpowers-zh/issues
+- 完整文档：https://github.com/ShirlyTaylor73/superpowers-zh

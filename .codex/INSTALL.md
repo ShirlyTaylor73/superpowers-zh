@@ -10,7 +10,7 @@
 
 1. **克隆 superpowers-zh 仓库：**
    ```bash
-   git clone https://github.com/jnMetaCode/superpowers-zh.git ~/.codex/superpowers
+   git clone https://github.com/ShirlyTaylor73/superpowers-zh.git ~/.codex/superpowers
    ```
 
 2. **创建 skills 符号链接：**
