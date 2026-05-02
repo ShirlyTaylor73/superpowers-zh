@@ -105,14 +105,14 @@ AI：在开始实现之前，我需要了解几个关键问题：
 |-------|------|
 | **头脑风暴** (brainstorming) | 需求分析 → 设计规格，不写代码先想清楚 |
 | **编写计划** (writing-plans) | 把规格拆成可执行的实施步骤 |
-| **串行执行计划** (serial-executing-plans) | 按计划逐步实施，每步验证 |
+| **串行执行计划** (serial-executing-plans) | 小计划或无子代理平台下按编号串行实施，每步验证 |
 | **测试驱动开发** (test-driven-development) | 严格 TDD：先写测试，再写代码 |
 | **系统化调试** (systematic-debugging) | 四阶段调试法：定位→分析→假设→修复 |
 | **请求代码审查** (requesting-code-review) | 派遣审查 agent 检查代码质量 |
 | **接收代码审查** (receiving-code-review) | 技术严谨地处理审查反馈，拒绝敷衍 |
 | **完成前验证** (verification-before-completion) | 证据先行——声称完成前必须跑验证 |
 | **派遣并行 Agent** (dispatching-parallel-agents) | 多任务并发执行 |
-| **子 Agent 驱动开发** (parallel-executing-plans) | 每个任务一个 agent，两轮审查 |
+| **子 Agent 驱动开发** (parallel-executing-plans) | 大计划按 wave 并行调度子 agent，并进行 task-local 与 Wave FINAL 审查 |
 | **Git Worktree 使用** (using-git-worktrees) | 隔离式特性开发 |
 | **完成开发分支** (finishing-a-development-branch) | 合并/PR/保留/丢弃四选一 |
 | **编写 Skills** (writing-skills) | 创建新 skill 的方法论 |
