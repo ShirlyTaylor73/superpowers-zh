@@ -3,7 +3,7 @@ name: parallel-executing-plans
 description: 当在当前会话中执行包含独立任务的实现计划时使用
 ---
 
-# 子智能体驱动开发
+# 并行执行计划
 
 通过 **wave 化并行调度**执行计划：wave 内并发派发实现子智能体（前提：同 wave 任务符号空间 pairwise 互不相交）、wave 间阻塞 gate；每任务后做 task-local 规格合规审查；全 plan 实现 wave 完成后启动 **Wave FINAL** 4 审并发（F1 规格合规 / F2 代码质量 / F3 真实手测 / F4 范围保真）；最终用户显式 ok 才进收尾。
 
@@ -252,7 +252,7 @@ implementer 与修复者**绝不**自行 commit。commit 在 wave 收口由 cont
 ## 示例工作流
 
 ```
-你：我正在使用子智能体驱动开发执行这个计划（4 个任务，2 个 wave）。
+你：我正在使用并行执行计划 skill 执行这个计划（4 个任务，2 个 wave）。
 
 [一次性读取计划文件 docs/superpowers/plans/feature-plan.md]
 [提取全部 4 个任务的完整文本 + 解析 ## 并行执行图章节]

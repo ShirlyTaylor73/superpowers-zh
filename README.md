@@ -105,7 +105,7 @@ AI：在开始实现之前，我需要了解几个关键问题：
 |-------|------|
 | **头脑风暴** (brainstorming) | 需求分析 → 设计规格，不写代码先想清楚 |
 | **编写计划** (writing-plans) | 把规格拆成可执行的实施步骤 |
-| **执行计划** (serial-executing-plans) | 按计划逐步实施，每步验证 |
+| **串行执行计划** (serial-executing-plans) | 按计划逐步实施，每步验证 |
 | **测试驱动开发** (test-driven-development) | 严格 TDD：先写测试，再写代码 |
 | **系统化调试** (systematic-debugging) | 四阶段调试法：定位→分析→假设→修复 |
 | **请求代码审查** (requesting-code-review) | 派遣审查 agent 检查代码质量 |

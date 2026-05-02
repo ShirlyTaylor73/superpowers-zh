@@ -3,7 +3,7 @@ name: serial-executing-plans
 description: 当你有一份书面实现计划需要在单独的会话中执行，并设有审查检查点时使用
 ---
 
-# 执行计划
+# 串行执行计划
 
 ## 概述
 
