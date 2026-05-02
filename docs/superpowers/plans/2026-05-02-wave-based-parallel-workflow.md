@@ -933,7 +933,7 @@ git commit -m "refactor(subagent-driven): 把 code-quality-reviewer 内核迁移
 
 **F3 关注点（独占）：** 测试绿了 ≠ 功能对了。F3 的职责是**真用一遍**——按用户路径走，看实际行为是否符合预期。
 
-```
+````
 Task tool (general-purpose):
   description: "Wave FINAL F3: 真实手动 QA"
   prompt: |
@@ -985,7 +985,7 @@ Task tool (general-purpose):
     REJECT 原因（仅当 REJECT）：
     - [场景描述] — 期望：[X]，实际：[Y]，证据：[终端输出 / 截图说明 / 网络响应]
     ```
-```
+````
 
 **当 F3 给 REJECT 时**：controller 派发修复 subagent 修复行为问题，再仅重跑 F3。
 ```
