@@ -7,7 +7,7 @@
 ```bash
 git clone https://github.com/ShirlyTaylor73/superpowers-zh.git
 mkdir -p /your/deerflow-project/skills/custom
-cp -r superpowers-zh/skills/* /your/deerflow-project/skills/custom/
+cp -r superpowers-zh/plugins/superpowers-zh/skills/* /your/deerflow-project/skills/custom/
 ```
 
 ## 工作原理
@@ -28,7 +28,7 @@ superpowers-zh 的 SKILL.md 文件格式与 DeerFlow 自定义 skills 完全兼�
 
 ```bash
 export DEERFLOW_SKILLS_DIR=/path/to/deerflow/skills/custom
-cp -r superpowers-zh/skills/* $DEERFLOW_SKILLS_DIR/
+cp -r superpowers-zh/plugins/superpowers-zh/skills/* $DEERFLOW_SKILLS_DIR/
 ```
 
 ## 使用
@@ -46,7 +46,7 @@ DeerFlow 会根据 skill 的 `description` 自动匹配并加载。
 ```bash
 cd /path/to/superpowers-zh
 git pull
-cp -r skills/* /your/deerflow-project/skills/custom/
+cp -r plugins/superpowers-zh/skills/* /your/deerflow-project/skills/custom/
 ```
 
 拉取最新仓库内容后重新复制 skills 即可更新。

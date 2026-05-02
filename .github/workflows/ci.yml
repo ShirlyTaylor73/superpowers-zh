@@ -15,14 +15,14 @@ jobs:
 
       - name: Count skills
         run: |
-          TOTAL=$(ls -d skills/*/ 2>/dev/null | wc -l)
+          TOTAL=$(ls -d plugins/superpowers-zh/skills/*/ 2>/dev/null | wc -l)
           echo "Total skills: $TOTAL"
-          ls -d skills/*/
+          ls -d plugins/superpowers-zh/skills/*/
 
       - name: Validate skill frontmatter
         run: |
           ERRORS=0
-          for dir in skills/*/; do
+          for dir in plugins/superpowers-zh/skills/*/; do
             SKILL_FILE="${dir}SKILL.md"
             if [ ! -f "$SKILL_FILE" ]; then
               echo "::error::Missing SKILL.md in $dir"
@@ -56,7 +56,7 @@ jobs:
       - name: Validate agents
         run: |
           ERRORS=0
-          for file in agents/*.md; do
+          for file in plugins/superpowers-zh/agents/*.md; do
             [ -f "$file" ] || continue
             if ! head -1 "$file" | grep -q '^---'; then
               echo "::error file=$file::Missing frontmatter"
@@ -80,4 +80,64 @@ jobs:
               process.exit(1);
             }
             console.log('package.json OK:', pkg.name, 'v' + pkg.version);
+          "
+
+      - name: Validate Codex marketplace
+        run: |
+          node -e "
+            const fs = require('fs');
+            const path = require('path');
+            const pkg = JSON.parse(fs.readFileSync('package.json', 'utf8'));
+            const marketplace = JSON.parse(fs.readFileSync('.agents/plugins/marketplace.json', 'utf8'));
+            for (const plugin of marketplace.plugins) {
+              const pluginPath = plugin.source && plugin.source.path;
+              if (!pluginPath || pluginPath === './' || pluginPath === '.') {
+                throw new Error(plugin.name + ': source.path must point to a plugin directory');
+              }
+              const root = path.resolve(pluginPath);
+              const manifestPath = path.join(root, '.codex-plugin', 'plugin.json');
+              if (!fs.existsSync(manifestPath)) {
+                throw new Error(plugin.name + ': missing ' + manifestPath);
+              }
+              const manifest = JSON.parse(fs.readFileSync(manifestPath, 'utf8'));
+              if (manifest.name !== plugin.name) {
+                throw new Error(plugin.name + ': manifest name mismatch');
+              }
+              if (manifest.version !== pkg.version) {
+                throw new Error(plugin.name + ': Codex manifest version must match package.json');
+              }
+              for (const rel of [manifest.skills, manifest.hooks].filter(Boolean)) {
+                if (!fs.existsSync(path.join(root, rel))) {
+                  throw new Error(plugin.name + ': missing manifest path ' + rel);
+                }
+              }
+            }
+            console.log('Codex marketplace OK');
+          "
+
+      - name: Validate Claude marketplace
+        run: |
+          node -e "
+            const fs = require('fs');
+            const path = require('path');
+            const pkg = JSON.parse(fs.readFileSync('package.json', 'utf8'));
+            const marketplace = JSON.parse(fs.readFileSync('.claude-plugin/marketplace.json', 'utf8'));
+            for (const plugin of marketplace.plugins) {
+              if (!plugin.source || plugin.source === './' || plugin.source === '.') {
+                throw new Error(plugin.name + ': source must point to a plugin directory');
+              }
+              const root = path.resolve(plugin.source);
+              const manifestPath = path.join(root, '.claude-plugin', 'plugin.json');
+              if (!fs.existsSync(manifestPath)) {
+                throw new Error(plugin.name + ': missing ' + manifestPath);
+              }
+              const manifest = JSON.parse(fs.readFileSync(manifestPath, 'utf8'));
+              if (manifest.name !== plugin.name) {
+                throw new Error(plugin.name + ': Claude manifest name mismatch');
+              }
+              if (plugin.version !== pkg.version || manifest.version !== pkg.version) {
+                throw new Error(plugin.name + ': Claude marketplace and manifest versions must match package.json');
+              }
+            }
+            console.log('Claude marketplace OK');
           "

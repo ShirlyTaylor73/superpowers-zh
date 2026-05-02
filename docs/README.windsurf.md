@@ -7,13 +7,13 @@
 ```bash
 git clone https://github.com/ShirlyTaylor73/superpowers-zh.git
 mkdir -p /your/project/.windsurf
-cp -r superpowers-zh/skills /your/project/.windsurf/skills
+cp -r superpowers-zh/plugins/superpowers-zh/skills /your/project/.windsurf/skills
 ```
 
 或全局安装：
 
 ```bash
-cp -r superpowers-zh/skills ~/.windsurf/skills
+cp -r superpowers-zh/plugins/superpowers-zh/skills ~/.windsurf/skills
 ```
 
 ## Skill 加载优先级

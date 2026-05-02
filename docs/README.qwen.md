@@ -7,14 +7,14 @@
 ```bash
 git clone https://github.com/ShirlyTaylor73/superpowers-zh.git
 mkdir -p /your/project/.qwen
-cp -r superpowers-zh/skills /your/project/.qwen/skills
+cp -r superpowers-zh/plugins/superpowers-zh/skills /your/project/.qwen/skills
 ```
 
 或全局安装：
 
 ```bash
 mkdir -p ~/.qwen/skills
-cp -r superpowers-zh/skills/* ~/.qwen/skills/
+cp -r superpowers-zh/plugins/superpowers-zh/skills/* ~/.qwen/skills/
 ```
 
 ## Skill 加载优先级

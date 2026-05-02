@@ -16,13 +16,13 @@
 2. **创建 skills 符号链接：**
    ```bash
    mkdir -p ~/.agents/skills
-   ln -s ~/.codex/superpowers/skills ~/.agents/skills/superpowers
+   ln -s ~/.codex/superpowers/plugins/superpowers-zh/skills ~/.agents/skills/superpowers
    ```
 
    **Windows (PowerShell)：**
    ```powershell
    New-Item -ItemType Directory -Force -Path "$env:USERPROFILE\.agents\skills"
-   cmd /c mklink /J "$env:USERPROFILE\.agents\skills\superpowers" "$env:USERPROFILE\.codex\superpowers\skills"
+   cmd /c mklink /J "$env:USERPROFILE\.agents\skills\superpowers" "$env:USERPROFILE\.codex\superpowers\plugins\superpowers-zh\skills"
    ```
 
 3. **重启 Codex**（退出并重新启动 CLI）以发现 skills。

@@ -7,14 +7,14 @@
 ```bash
 git clone https://github.com/ShirlyTaylor73/superpowers-zh.git
 mkdir -p /your/project/.gemini
-cp -r superpowers-zh/skills /your/project/.gemini/skills
+cp -r superpowers-zh/plugins/superpowers-zh/skills /your/project/.gemini/skills
 ```
 
 或作为 Gemini 扩展安装（全局）：
 
 ```bash
 mkdir -p ~/.gemini/extensions/superpowers-zh/skills
-cp -r superpowers-zh/skills/* ~/.gemini/extensions/superpowers-zh/skills/
+cp -r superpowers-zh/plugins/superpowers-zh/skills/* ~/.gemini/extensions/superpowers-zh/skills/
 cp superpowers-zh/gemini-extension.json ~/.gemini/extensions/superpowers-zh/
 ```
 

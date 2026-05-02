@@ -7,7 +7,7 @@
 ```bash
 git clone https://github.com/ShirlyTaylor73/superpowers-zh.git
 mkdir -p /your/project/.trae/rules
-cp -r superpowers-zh/skills/* /your/project/.trae/rules/
+cp -r superpowers-zh/plugins/superpowers-zh/skills/* /your/project/.trae/rules/
 ```
 
 ## 工作原理
@@ -45,7 +45,7 @@ Trae 原生支持中文，与 superpowers-zh 完美配合：
 ```bash
 cd /path/to/superpowers-zh
 git pull
-cp -r skills/* /your/project/.trae/rules/
+cp -r plugins/superpowers-zh/skills/* /your/project/.trae/rules/
 ```
 
 ## 获取帮助

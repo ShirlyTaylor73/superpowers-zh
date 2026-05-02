@@ -1,5 +1,5 @@
-@./skills/using-superpowers/SKILL.md
-@./skills/using-superpowers/references/gemini-tools.md
+@./plugins/superpowers-zh/skills/using-superpowers/SKILL.md
+@./plugins/superpowers-zh/skills/using-superpowers/references/gemini-tools.md
 
 
 # Superpowers-ZH 中文增强版

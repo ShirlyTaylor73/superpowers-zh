@@ -7,7 +7,7 @@
 ```bash
 git clone https://github.com/ShirlyTaylor73/superpowers-zh.git
 mkdir -p /your/project/.antigravity/skills
-cp -r superpowers-zh/skills/* /your/project/.antigravity/skills/
+cp -r superpowers-zh/plugins/superpowers-zh/skills/* /your/project/.antigravity/skills/
 ```
 
 ## 工作原理
@@ -76,7 +76,7 @@ Antigravity 支持 Agent Manager 并行执行多个 agent：
 ```bash
 cd /path/to/superpowers-zh
 git pull
-cp -r skills/* /your/project/.antigravity/skills/
+cp -r plugins/superpowers-zh/skills/* /your/project/.antigravity/skills/
 ```
 
 ## 获取帮助

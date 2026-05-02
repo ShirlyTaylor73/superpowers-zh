@@ -33,7 +33,7 @@ const extractAndStripFrontmatter = (content) => {
 };
 
 export const SuperpowersPlugin = async ({ client, directory }) => {
-  const superpowersSkillsDir = path.resolve(__dirname, '../../skills');
+  const superpowersSkillsDir = path.resolve(__dirname, '../../plugins/superpowers-zh/skills');
 
   // Helper to generate bootstrap content
   const getBootstrapContent = () => {

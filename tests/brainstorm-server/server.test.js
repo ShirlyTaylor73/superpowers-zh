@@ -15,7 +15,7 @@ const fs = require('fs');
 const path = require('path');
 const assert = require('assert');
 
-const SERVER_PATH = path.join(__dirname, '../../skills/brainstorming/scripts/server.cjs');
+const SERVER_PATH = path.join(__dirname, '../../plugins/superpowers-zh/skills/brainstorming/scripts/server.cjs');
 const TEST_PORT = 3334;
 const TEST_DIR = '/tmp/brainstorm-test';
 
@@ -384,7 +384,7 @@ async function runTests() {
 
     await test('helper.js defines required APIs', () => {
       const helperContent = fs.readFileSync(
-        path.join(__dirname, '../../skills/brainstorming/scripts/helper.js'), 'utf-8'
+        path.join(__dirname, '../../plugins/superpowers-zh/skills/brainstorming/scripts/helper.js'), 'utf-8'
       );
       assert(helperContent.includes('toggleSelect'), 'Should define toggleSelect');
       assert(helperContent.includes('sendEvent'), 'Should define sendEvent');
@@ -398,7 +398,7 @@ async function runTests() {
 
     await test('frame template has required structure', () => {
       const template = fs.readFileSync(
-        path.join(__dirname, '../../skills/brainstorming/scripts/frame-template.html'), 'utf-8'
+        path.join(__dirname, '../../plugins/superpowers-zh/skills/brainstorming/scripts/frame-template.html'), 'utf-8'
       );
       assert(template.includes('indicator-bar'), 'Should have indicator bar');
       assert(template.includes('indicator-text'), 'Should have indicator text');

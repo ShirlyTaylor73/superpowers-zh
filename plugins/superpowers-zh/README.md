@@ -135,7 +135,7 @@ AI：在开始实现之前，我需要了解几个关键问题：
 
 ### 方式一：插件市场安装（推荐 · 含 hooks）
 
-> 这是 Claude Code 和 Codex CLI 用户的**推荐方式**——除 skills 外还会一并加载 [`hooks/`](plugins/superpowers-zh/hooks/)（手动复制 skill 文件不会启用 hooks）。
+> 这是 Claude Code 和 Codex CLI 用户的**推荐方式**——除 skills 外还会一并加载 [`hooks/`](hooks/)（手动复制 skill 文件不会启用 hooks）。
 
 **Claude Code：** 在交互会话中依次执行：
 
@@ -168,22 +168,22 @@ codex plugin marketplace remove superpowers-zh
 git clone https://github.com/ShirlyTaylor73/superpowers-zh.git
 
 # 复制 skills 到你的项目（选择你使用的工具）
-cp -r superpowers-zh/plugins/superpowers-zh/skills /your/project/.claude/skills      # Claude Code / Copilot CLI
-cp -r superpowers-zh/plugins/superpowers-zh/skills /your/project/.hermes/skills      # Hermes Agent
-cp -r superpowers-zh/plugins/superpowers-zh/skills /your/project/.cursor/skills      # Cursor
-cp -r superpowers-zh/plugins/superpowers-zh/skills /your/project/.codex/skills       # Codex CLI
-cp -r superpowers-zh/plugins/superpowers-zh/skills /your/project/.kiro/steering      # Kiro
-cp -r superpowers-zh/plugins/superpowers-zh/skills /your/project/skills/custom       # DeerFlow 2.0
-cp -r superpowers-zh/plugins/superpowers-zh/skills /your/project/.trae/rules         # Trae
-cp -r superpowers-zh/plugins/superpowers-zh/skills /your/project/.antigravity        # Antigravity
-cp -r superpowers-zh/plugins/superpowers-zh/skills /your/project/.github/superpowers # VS Code (Copilot)
-cp -r superpowers-zh/plugins/superpowers-zh/skills /your/project/skills              # OpenClaw
-cp -r superpowers-zh/plugins/superpowers-zh/skills /your/project/.windsurf/skills   # Windsurf
-cp -r superpowers-zh/plugins/superpowers-zh/skills /your/project/.gemini/skills     # Gemini CLI
-cp -r superpowers-zh/plugins/superpowers-zh/skills /your/project/.aider/skills      # Aider
-cp -r superpowers-zh/plugins/superpowers-zh/skills /your/project/.opencode/skills   # OpenCode
-cp -r superpowers-zh/plugins/superpowers-zh/skills /your/project/.qwen/skills       # Qwen Code
-cp -r superpowers-zh/plugins/superpowers-zh/skills /your/project/.claw/skills       # Claw Code（Rust 版）
+cp -r superpowers-zh/skills /your/project/.claude/skills      # Claude Code / Copilot CLI
+cp -r superpowers-zh/skills /your/project/.hermes/skills      # Hermes Agent
+cp -r superpowers-zh/skills /your/project/.cursor/skills      # Cursor
+cp -r superpowers-zh/skills /your/project/.codex/skills       # Codex CLI
+cp -r superpowers-zh/skills /your/project/.kiro/steering      # Kiro
+cp -r superpowers-zh/skills /your/project/skills/custom       # DeerFlow 2.0
+cp -r superpowers-zh/skills /your/project/.trae/rules         # Trae
+cp -r superpowers-zh/skills /your/project/.antigravity        # Antigravity
+cp -r superpowers-zh/skills /your/project/.github/superpowers # VS Code (Copilot)
+cp -r superpowers-zh/skills /your/project/skills              # OpenClaw
+cp -r superpowers-zh/skills /your/project/.windsurf/skills   # Windsurf
+cp -r superpowers-zh/skills /your/project/.gemini/skills     # Gemini CLI
+cp -r superpowers-zh/skills /your/project/.aider/skills      # Aider
+cp -r superpowers-zh/skills /your/project/.opencode/skills   # OpenCode
+cp -r superpowers-zh/skills /your/project/.qwen/skills       # Qwen Code
+cp -r superpowers-zh/skills /your/project/.claw/skills       # Claw Code（Rust 版）
 ```
 
 ### 方式三：在配置文件中引用

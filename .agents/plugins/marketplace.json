@@ -8,7 +8,7 @@
       "name": "superpowers-zh",
       "source": {
         "source": "local",
-        "path": "./"
+        "path": "./plugins/superpowers-zh"
       },
       "policy": {
         "installation": "AVAILABLE",

@@ -2,7 +2,7 @@
   "name": "superpowers-zh",
   "displayName": "Superpowers 中文版",
   "description": "AI 编程超能力中文增强版：20 个 skills（14 翻译 + 6 中国原创），支持 Cursor / Claude Code / Hermes Agent / Claw Code 等 17 款工具",
-  "version": "1.1.8",
+  "version": "1.1.9",
   "author": {
     "name": "ShirlyTaylor73",
     "url": "https://github.com/ShirlyTaylor73"
@@ -11,8 +11,8 @@
   "repository": "https://github.com/ShirlyTaylor73/superpowers-zh",
   "license": "MIT",
   "keywords": ["skills", "tdd", "debugging", "chinese", "中文", "best-practices", "workflows"],
-  "skills": "./skills/",
-  "agents": "./agents/",
+  "skills": "./plugins/superpowers-zh/skills/",
+  "agents": "./plugins/superpowers-zh/agents/",
   "commands": "./commands/",
-  "hooks": "./hooks/hooks-cursor.json"
+  "hooks": "./plugins/superpowers-zh/hooks/hooks-cursor.json"
 }

@@ -7,13 +7,13 @@
 ```bash
 git clone https://github.com/ShirlyTaylor73/superpowers-zh.git
 mkdir -p /your/project/skills
-cp -r superpowers-zh/skills/* /your/project/skills/
+cp -r superpowers-zh/plugins/superpowers-zh/skills/* /your/project/skills/
 ```
 
 或安装到全局（所有项目共享）：
 
 ```bash
-cp -r superpowers-zh/skills/* ~/.openclaw/skills/
+cp -r superpowers-zh/plugins/superpowers-zh/skills/* ~/.openclaw/skills/
 ```
 
 ## 工作原理
@@ -66,7 +66,7 @@ OpenClaw 与 Claude Code 使用相同的工具名称，skills 无需额外适配
 
 ```bash
 mkdir -p ~/.openclaw/skills
-cp -r superpowers-zh/skills/* ~/.openclaw/skills/
+cp -r superpowers-zh/plugins/superpowers-zh/skills/* ~/.openclaw/skills/
 ```
 
 也可以通过 `~/.openclaw/openclaw.json` 配置额外 skills 目录：
@@ -75,7 +75,7 @@ cp -r superpowers-zh/skills/* ~/.openclaw/skills/
 {
   "skills": {
     "load": {
-      "extraDirs": ["/path/to/superpowers-zh/skills"]
+      "extraDirs": ["/path/to/superpowers-zh/plugins/superpowers-zh/skills"]
     }
   }
 }
@@ -86,7 +86,7 @@ cp -r superpowers-zh/skills/* ~/.openclaw/skills/
 ```bash
 cd /path/to/superpowers-zh
 git pull
-cp -r skills/* /your/project/skills/
+cp -r plugins/superpowers-zh/skills/* /your/project/skills/
 ```
 
 ## 获取帮助

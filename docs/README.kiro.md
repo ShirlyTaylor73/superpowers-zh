@@ -7,7 +7,7 @@
 ```bash
 git clone https://github.com/ShirlyTaylor73/superpowers-zh.git
 mkdir -p /your/project/.kiro/steering
-cp -r superpowers-zh/skills/* /your/project/.kiro/steering/
+cp -r superpowers-zh/plugins/superpowers-zh/skills/* /your/project/.kiro/steering/
 ```
 
 ## 工作原理
@@ -51,7 +51,7 @@ alwaysApply: true
 ```bash
 cd /path/to/superpowers-zh
 git pull
-cp -r skills/* /your/project/.kiro/steering/
+cp -r plugins/superpowers-zh/skills/* /your/project/.kiro/steering/
 ```
 
 拉取最新仓库内容后重新复制 skills 即可更新。

@@ -7,7 +7,7 @@
 ```bash
 git clone https://github.com/ShirlyTaylor73/superpowers-zh.git
 mkdir -p /your/project/.aider
-cp -r superpowers-zh/skills /your/project/.aider/skills
+cp -r superpowers-zh/plugins/superpowers-zh/skills /your/project/.aider/skills
 ```
 
 ## 通过 CONVENTIONS.md 引用
