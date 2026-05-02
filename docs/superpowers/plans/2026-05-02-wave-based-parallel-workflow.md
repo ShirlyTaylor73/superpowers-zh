@@ -343,6 +343,7 @@ digraph wave_flow {
     "并发起 final 修复回路" [shape=box];
     "用户显式 ok?" [shape=diamond];
     "进入 finishing-a-development-branch" [shape=box, style=filled, fillcolor=lightgreen];
+    "plan 失败终止" [shape=box, style=filled, fillcolor=salmon];
 
     "读 plan, 解析 wave 章节" -> "无 wave 章节?";
     "无 wave 章节?" -> "退化: 每任务单独成 wave" [label="是"];
@@ -369,6 +370,9 @@ digraph wave_flow {
     "F1-F4 全 APPROVE?" -> "用户显式 ok?" [label="是"];
     "用户显式 ok?" -> "进入 finishing-a-development-branch" [label="是"];
     "用户显式 ok?" -> "并发起 final 修复回路" [label="否, 提建议"];
+
+    "通过用户输入接口三选一" -> "并发起修复回路 (失败者)" [label="选项 1/2: 重派"];
+    "通过用户输入接口三选一" -> "plan 失败终止" [label="选项 3: 放弃"];
 }
 ```
 ```
