@@ -2,19 +2,11 @@
 
 在 [Kiro](https://kiro.dev)（Amazon AI IDE）中使用 superpowers-zh 的完整指南。
 
-## 快速安装
-
-```bash
-cd /your/project
-npx superpowers-zh
-```
-
-安装脚本会自动检测 `.kiro/` 目录并将 skills 复制到 `.kiro/steering/`。
-
-## 手动安装
+## 安装
 
 ```bash
 git clone https://github.com/ShirlyTaylor73/superpowers-zh.git
+mkdir -p /your/project/.kiro/steering
 cp -r superpowers-zh/skills/* /your/project/.kiro/steering/
 ```
 
@@ -57,11 +49,12 @@ alwaysApply: true
 ## 更新
 
 ```bash
-cd /your/project
-npx superpowers-zh
+cd /path/to/superpowers-zh
+git pull
+cp -r skills/* /your/project/.kiro/steering/
 ```
 
-重新运行安装命令即可更新到最新版本。
+拉取最新仓库内容后重新复制 skills 即可更新。
 
 ## 获取帮助
 

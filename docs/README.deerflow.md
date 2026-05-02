@@ -2,16 +2,7 @@
 
 在 [DeerFlow 2.0](https://github.com/bytedance/deer-flow)（字节跳动开源 SuperAgent）中使用 superpowers-zh 的完整指南。
 
-## 快速安装
-
-```bash
-cd /your/deerflow-project
-npx superpowers-zh
-```
-
-安装脚本会自动检测 `deer_flow/` 目录并将 skills 复制到 `skills/custom/`。
-
-## 手动安装
+## 安装
 
 ```bash
 git clone https://github.com/ShirlyTaylor73/superpowers-zh.git
@@ -53,11 +44,12 @@ DeerFlow 会根据 skill 的 `description` 自动匹配并加载。
 ## 更新
 
 ```bash
-cd /your/deerflow-project
-npx superpowers-zh
+cd /path/to/superpowers-zh
+git pull
+cp -r skills/* /your/deerflow-project/skills/custom/
 ```
 
-重新运行安装命令即可更新到最新版本。
+拉取最新仓库内容后重新复制 skills 即可更新。
 
 ## 获取帮助
 

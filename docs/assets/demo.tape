@@ -7,7 +7,7 @@ Set TypingSpeed 40ms
 Set Padding 20
 
 # Scene 1: Install superpowers-zh
-Type "cd ~/my-project && npx superpowers-zh"
+Type "codex plugin marketplace add ShirlyTaylor73/superpowers-zh"
 Enter
 Sleep 1s
 
@@ -21,22 +21,22 @@ Ctrl+L
 Set TypingSpeed 0ms
 
 # Simulated install output line by line
-Type "  superpowers-zh v1.2.0"
+Type "  Added marketplace: superpowers-zh"
 Enter
 Sleep 200ms
-Type "  Detected: Claude Code"
+Type "  Source: github.com/ShirlyTaylor73/superpowers-zh"
 Enter
 Sleep 200ms
-Type "  Installing 20 skills to .claude/skills/ ..."
+Type "  Open Codex and run /plugins to install superpowers-zh"
 Enter
 Sleep 500ms
-Type "  ✓ 14 translated skills installed"
+Type "  ✓ 20 skills available"
 Enter
 Sleep 200ms
-Type "  ✓ 6 Chinese-specific skills installed"
+Type "  ✓ hooks included"
 Enter
 Sleep 300ms
-Type "  Done! Your AI assistant now has superpowers."
+Type "  Done! Marketplace is ready."
 Enter
 Enter
 Sleep 1.5s

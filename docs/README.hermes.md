@@ -2,31 +2,17 @@
 
 在 [Hermes Agent](https://github.com/NousResearch/hermes-agent) 中使用 superpowers-zh 的完整指南。
 
-## 自动安装
-
-```bash
-cd /your/project
-npx superpowers-zh --tool hermes
-```
-
-安装脚本会将 20 个 skills 复制到 `.hermes/skills/` 目录，并自动生成 `HERMES.md` 引导文件（含工具映射表和 skills 列表）。
-
-如果项目中已存在 `.hermes` 目录或 `HERMES.md` 文件，也会被自动检测到：
-
-```bash
-npx superpowers-zh   # 自动检测
-```
-
-## 手动安装
+## 安装
 
 ```bash
 git clone https://github.com/ShirlyTaylor73/superpowers-zh.git
+mkdir -p /your/project/.hermes
 cp -r superpowers-zh/skills /your/project/.hermes/skills
 ```
 
 ## 通过 HERMES.md 引导
 
-Hermes Agent 在会话开始时自动加载项目根目录下的 `HERMES.md`（或 `.hermes.md`）作为上下文。安装器会自动生成此文件，内容包括：
+Hermes Agent 在会话开始时自动加载项目根目录下的 `HERMES.md`（或 `.hermes.md`）作为上下文。可以手动创建此文件，写入：
 
 - 工具映射表（Claude Code → Hermes Agent 工具名称）
 - 所有可用 skills 的列表和描述

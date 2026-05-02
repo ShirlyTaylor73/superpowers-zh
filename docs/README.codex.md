@@ -20,7 +20,7 @@ codex plugin marketplace add ShirlyTaylor73/superpowers-zh
 
 支持的来源格式（Codex 官方）：
 - GitHub shorthand：`ShirlyTaylor73/superpowers-zh`
-- 锁定 ref：`ShirlyTaylor73/superpowers-zh@v1.1.8` 或 `--ref v1.1.8`
+- 锁定 ref：`ShirlyTaylor73/superpowers-zh@v1.1.9` 或 `--ref v1.1.9`
 - HTTPS Git URL：`https://github.com/ShirlyTaylor73/superpowers-zh.git`
 - SSH Git URL：`git@github.com:ShirlyTaylor73/superpowers-zh.git`
 - 本地路径：`/path/to/superpowers-zh`
@@ -31,14 +31,14 @@ codex plugin marketplace add ShirlyTaylor73/superpowers-zh
 /plugins
 ```
 
-在列表中选中 `superpowers-zh` → 安装。
+在列表中选中 `superpowers-zh` → 安装。插件市场方式会同时加载 skills 和 [`hooks/`](../hooks/)。
 
 ### 更新 · 移除 · 禁用
 
 ```bash
 codex plugin marketplace upgrade                 # 刷新所有 Git 市场
 codex plugin marketplace upgrade superpowers-zh  # 仅刷新本市场
-codex plugin marketplace remove superpowers-zh   # 移除市场
+codex plugin marketplace remove superpowers-zh   # 移除市场并卸载其中插件
 ```
 
 不卸载只禁用：编辑 `~/.codex/config.toml`，将 `superpowers-zh` 条目设为 `enabled = false`，重启 Codex。

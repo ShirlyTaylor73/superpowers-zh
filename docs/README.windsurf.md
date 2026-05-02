@@ -2,19 +2,11 @@
 
 在 [Windsurf](https://codeium.com/windsurf) 中使用 superpowers-zh 的完整指南。
 
-## 自动安装
-
-```bash
-cd /your/project
-npx superpowers-zh
-```
-
-安装脚本会自动检测 `.windsurf/` 目录并将 skills 复制到 `.windsurf/skills/` 目录。
-
-## 手动安装
+## 安装
 
 ```bash
 git clone https://github.com/ShirlyTaylor73/superpowers-zh.git
+mkdir -p /your/project/.windsurf
 cp -r superpowers-zh/skills /your/project/.windsurf/skills
 ```
 

@@ -1,7 +1,7 @@
 {
   "name": "superpowers-zh",
   "description": "AI 编程超能力中文增强版：20 个 skills（14 翻译 + 6 中国原创），支持 Claude Code / Hermes Agent / Cursor / Claw Code 等 17 款工具",
-  "version": "1.1.8",
+  "version": "1.1.9",
   "author": {
     "name": "ShirlyTaylor73",
     "url": "https://github.com/ShirlyTaylor73"
@@ -9,5 +9,22 @@
   "homepage": "https://github.com/ShirlyTaylor73/superpowers-zh",
   "repository": "https://github.com/ShirlyTaylor73/superpowers-zh",
   "license": "MIT",
-  "keywords": ["skills", "tdd", "debugging", "chinese", "中文", "best-practices", "workflows"]
+  "keywords": ["skills", "tdd", "debugging", "chinese", "中文", "best-practices", "workflows"],
+  "skills": "./skills/",
+  "hooks": "./hooks/hooks-codex.json",
+  "interface": {
+    "displayName": "Superpowers 中文版",
+    "shortDescription": "中文 AI 编程工作流 skills 与自动上下文注入。",
+    "longDescription": "Superpowers 中文版提供 20 个中文增强 skills，覆盖头脑风暴、计划执行、TDD、系统化调试、代码审查、Git 工作流与中文文档等场景，并通过 SessionStart hook 自动注入 using-superpowers 上下文。",
+    "developerName": "ShirlyTaylor73",
+    "category": "Productivity",
+    "capabilities": ["Interactive", "Write", "Hooks"],
+    "websiteURL": "https://github.com/ShirlyTaylor73/superpowers-zh",
+    "defaultPrompt": [
+      "使用 superpowers 帮我制定开发计划。",
+      "用系统化调试方法分析这个问题。",
+      "按中文代码审查标准 review 当前改动。"
+    ],
+    "brandColor": "#D97706"
+  }
 }

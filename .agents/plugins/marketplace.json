@@ -1,0 +1,20 @@
+{
+  "name": "superpowers-zh",
+  "interface": {
+    "displayName": "Superpowers 中文版"
+  },
+  "plugins": [
+    {
+      "name": "superpowers-zh",
+      "source": {
+        "source": "local",
+        "path": "./"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

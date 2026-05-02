@@ -14,7 +14,7 @@
 ```bash
 # 第一步：安装（3秒）
 cd ~/demo-project
-npx superpowers-zh
+codex plugin marketplace add ShirlyTaylor73/superpowers-zh
 
 # 第二步：给 AI 提需求（等 AI 回复）
 claude "给用户模块加一个批量导出功能"

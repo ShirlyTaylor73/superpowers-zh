@@ -2,16 +2,7 @@
 
 在 [Google Antigravity](https://antigravity.google)（Google AI IDE）中使用 superpowers-zh 的完整指南。
 
-## 快速安装
-
-```bash
-cd /your/project
-npx superpowers-zh
-```
-
-安装脚本会自动检测 `.antigravity/` 目录并将 skills 复制到该目录。
-
-## 手动安装
+## 安装
 
 ```bash
 git clone https://github.com/ShirlyTaylor73/superpowers-zh.git
@@ -83,8 +74,9 @@ Antigravity 支持 Agent Manager 并行执行多个 agent：
 ## 更新
 
 ```bash
-cd /your/project
-npx superpowers-zh
+cd /path/to/superpowers-zh
+git pull
+cp -r skills/* /your/project/.antigravity/skills/
 ```
 
 ## 获取帮助

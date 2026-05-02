@@ -2,19 +2,11 @@
 
 在 [Aider](https://aider.chat) 中使用 superpowers-zh 的完整指南。
 
-## 自动安装
-
-```bash
-cd /your/project
-npx superpowers-zh
-```
-
-安装脚本会自动检测 `.aider.conf.yml` 文件并将 skills 复制到 `.aider/skills/` 目录。
-
-## 手动安装
+## 安装
 
 ```bash
 git clone https://github.com/ShirlyTaylor73/superpowers-zh.git
+mkdir -p /your/project/.aider
 cp -r superpowers-zh/skills /your/project/.aider/skills
 ```
 

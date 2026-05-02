@@ -2,19 +2,11 @@
 
 在 [OpenClaw](https://github.com/anthropics/openclaw) 中使用 superpowers-zh 的完整指南。
 
-## 快速安装
-
-```bash
-cd /your/project
-npx superpowers-zh
-```
-
-安装脚本会自动检测 `.openclaw/` 目录并将 skills 复制到 `skills/` 目录。
-
-## 手动安装
+## 安装
 
 ```bash
 git clone https://github.com/ShirlyTaylor73/superpowers-zh.git
+mkdir -p /your/project/skills
 cp -r superpowers-zh/skills/* /your/project/skills/
 ```
 
@@ -92,8 +84,9 @@ cp -r superpowers-zh/skills/* ~/.openclaw/skills/
 ## 更新
 
 ```bash
-cd /your/project
-npx superpowers-zh
+cd /path/to/superpowers-zh
+git pull
+cp -r skills/* /your/project/skills/
 ```
 
 ## 获取帮助

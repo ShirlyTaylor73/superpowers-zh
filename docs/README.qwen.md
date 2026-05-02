@@ -2,19 +2,11 @@
 
 在 [Qwen Code](https://tongyi.aliyun.com/qianwen) (通义灵码) 中使用 superpowers-zh 的完整指南。
 
-## 自动安装
-
-```bash
-cd /your/project
-npx superpowers-zh
-```
-
-安装脚本会自动检测 `.qwen/` 目录并将 skills 复制到 `.qwen/skills/` 目录。
-
-## 手动安装
+## 安装
 
 ```bash
 git clone https://github.com/ShirlyTaylor73/superpowers-zh.git
+mkdir -p /your/project/.qwen
 cp -r superpowers-zh/skills /your/project/.qwen/skills
 ```
 

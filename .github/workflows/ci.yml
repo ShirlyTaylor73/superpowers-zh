@@ -65,18 +65,19 @@ jobs:
           done
           exit $ERRORS
 
-      - name: Check package.json
+      - name: Check package.json metadata
         run: |
           node -e "
             const pkg = JSON.parse(require('fs').readFileSync('package.json', 'utf8'));
-            const required = ['name', 'version', 'description', 'license'];
+            const required = ['name', 'version', 'description', 'license', 'main'];
             const missing = required.filter(f => !pkg[f]);
             if (missing.length) {
               console.error('Missing package.json fields:', missing.join(', '));
               process.exit(1);
             }
+            if (!pkg.private) {
+              console.error('package.json must stay private; this repo is installed through plugin marketplaces, not npm/npx.');
+              process.exit(1);
+            }
             console.log('package.json OK:', pkg.name, 'v' + pkg.version);
           "
-
-      - name: Validate install script
-        run: node bin/superpowers-zh.js --help

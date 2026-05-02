@@ -27,10 +27,23 @@ if exist "C:\Program Files (x86)\Git\bin\bash.exe" (
     exit /b %ERRORLEVEL%
 )
 
-REM Try bash on PATH (e.g. user-installed Git Bash, MSYS2, Cygwin)
-where bash >nul 2>nul
-if %ERRORLEVEL% equ 0 (
-    bash "%HOOK_DIR%%~1" %2 %3 %4 %5 %6 %7 %8 %9
+REM Try bash on PATH, but skip Windows' WSL shim because it cannot run
+REM Windows-style hook paths like C:\...\hooks\session-start.
+for /f "delims=" %%B in ('where bash 2^>nul') do (
+    echo %%B | findstr /I "\\Windows\\System32\\bash.exe \\WindowsApps\\bash.exe" >nul
+    if errorlevel 1 (
+        "%%B" "%HOOK_DIR%%~1" %2 %3 %4 %5 %6 %7 %8 %9
+        exit /b %ERRORLEVEL%
+    )
+)
+
+REM Try common MSYS2 locations.
+if exist "C:\msys64\usr\bin\bash.exe" (
+    "C:\msys64\usr\bin\bash.exe" "%HOOK_DIR%%~1" %2 %3 %4 %5 %6 %7 %8 %9
+    exit /b %ERRORLEVEL%
+)
+if exist "C:\cygwin64\bin\bash.exe" (
+    "C:\cygwin64\bin\bash.exe" "%HOOK_DIR%%~1" %2 %3 %4 %5 %6 %7 %8 %9
     exit /b %ERRORLEVEL%
 )
 

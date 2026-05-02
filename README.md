@@ -133,9 +133,9 @@ AI：在开始实现之前，我需要了解几个关键问题：
 
 ## 快速开始
 
-### 方式一：插件市场安装（Claude Code 推荐 · 含 hooks）
+### 方式一：插件市场安装（推荐 · 含 hooks）
 
-> 这是 Claude Code 用户的**推荐方式**——除 skills 外还会一并加载 [`hooks/`](hooks/)（手动复制 skill 文件不会启用 hooks，因为 hook 脚本依赖 `${CLAUDE_PLUGIN_ROOT}`，只有走插件协议时才会被注入）。
+> 这是 Claude Code 和 Codex CLI 用户的**推荐方式**——除 skills 外还会一并加载 [`hooks/`](hooks/)（手动复制 skill 文件不会启用 hooks）。
 
 **Claude Code：** 在交互会话中依次执行：
 
@@ -152,7 +152,14 @@ AI：在开始实现之前，我需要了解几个关键问题：
 codex plugin marketplace add ShirlyTaylor73/superpowers-zh
 ```
 
-然后启动 Codex，输入 `/plugins` 选择 `superpowers-zh` 安装。更新 / 移除：`codex plugin marketplace upgrade` · `codex plugin marketplace remove superpowers-zh`。如插件市场方式不可用，可回退到符号链接方案，见 [docs/README.codex.md](docs/README.codex.md)。
+然后启动 Codex，输入 `/plugins` 选择 `superpowers-zh` 安装。
+
+```bash
+codex plugin marketplace upgrade superpowers-zh
+codex plugin marketplace remove superpowers-zh
+```
+
+如插件市场方式不可用，可回退到符号链接方案，见 [docs/README.codex.md](docs/README.codex.md)。
 
 ### 方式二：手动安装
 
