@@ -18,7 +18,7 @@ Skills 使用 Claude Code 的工具名称。在 Gemini CLI 中遇到这些名称
 
 ## 不支持子 Agent
 
-Gemini CLI 没有 Claude Code `Task` 工具的等价物。依赖子 agent 派遣的 skills（`subagent-driven-development`、`dispatching-parallel-agents`）将退化为通过 `executing-plans` 进行单会话执行。
+Gemini CLI 没有 Claude Code `Task` 工具的等价物。依赖子 agent 派遣的 skills（`parallel-executing-plans`、`dispatching-parallel-agents`）将退化为通过 `serial-executing-plans` 进行单会话执行。
 
 ## Gemini CLI 额外工具
 

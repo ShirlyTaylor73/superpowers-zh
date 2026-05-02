@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Scaffold the Svelte Todo test project
+# Scaffold the Go Fractals test project
 # Usage: ./scaffold.sh /path/to/target/directory
 
 set -e
@@ -27,8 +27,7 @@ cat > .claude/settings.local.json << 'SETTINGS'
       "Read(**)",
       "Edit(**)",
       "Write(**)",
-      "Bash(npm:*)",
-      "Bash(npx:*)",
+      "Bash(go:*)",
       "Bash(mkdir:*)",
       "Bash(git:*)"
     ]
@@ -40,7 +39,7 @@ SETTINGS
 git add .
 git commit -m "Initial project setup with design and plan"
 
-echo "Scaffolded Svelte Todo project at: $TARGET_DIR"
+echo "Scaffolded Go Fractals project at: $TARGET_DIR"
 echo ""
 echo "To run the test:"
-echo "  claude -p \"Execute this plan using superpowers:subagent-driven-development. Plan: $TARGET_DIR/plan.md\" --plugin-dir /path/to/superpowers"
+echo "  claude -p \"Execute this plan using superpowers:parallel-executing-plans. Plan: $TARGET_DIR/plan.md\" --plugin-dir /path/to/superpowers"

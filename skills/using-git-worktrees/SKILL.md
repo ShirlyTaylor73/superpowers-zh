@@ -210,8 +210,8 @@ go test ./...
 
 **被以下技能调用：**
 - **brainstorming**（阶段 4）- 设计通过且需要实现时必需
-- **subagent-driven-development** - 执行任何任务前必需
-- **executing-plans** - 执行任何任务前必需
+- **parallel-executing-plans** - 执行任何任务前必需
+- **serial-executing-plans** - 执行任何任务前必需
 - 任何需要隔离工作区的技能
 
 **配合使用：**

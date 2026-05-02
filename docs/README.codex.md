@@ -64,7 +64,7 @@ codex plugin marketplace remove superpowers-zh   # 移除市场
 
 3. 重启 Codex。
 
-4. **子代理 skills（可选）：** `dispatching-parallel-agents` 和 `subagent-driven-development` 需要 Codex 的多代理功能。在 `~/.codex/config.toml` 中添加：
+4. **子代理 skills（可选）：** `dispatching-parallel-agents` 和 `parallel-executing-plans` 需要 Codex 的多代理功能。在 `~/.codex/config.toml` 中添加：
    ```toml
    [features]
    multi_agent = true

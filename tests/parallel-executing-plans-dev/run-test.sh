@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Run a subagent-driven-development test
+# Run a parallel-executing-plans test
 # Usage: ./run-test.sh <test-name> [--plugin-dir <path>]
 #
 # Example:
@@ -43,7 +43,7 @@ fi
 
 # Create timestamped output directory
 TIMESTAMP=$(date +%s)
-OUTPUT_BASE="/tmp/superpowers-tests/$TIMESTAMP/subagent-driven-development"
+OUTPUT_BASE="/tmp/superpowers-tests/$TIMESTAMP/parallel-executing-plans"
 OUTPUT_DIR="$OUTPUT_BASE/$TEST_NAME"
 mkdir -p "$OUTPUT_DIR"
 
@@ -60,7 +60,7 @@ echo ""
 
 # Prepare the prompt
 PLAN_PATH="$OUTPUT_DIR/project/plan.md"
-PROMPT="Execute this plan using superpowers:subagent-driven-development. The plan is at: $PLAN_PATH"
+PROMPT="Execute this plan using superpowers:parallel-executing-plans. The plan is at: $PLAN_PATH"
 
 # Run Claude with JSON output for token tracking
 LOG_FILE="$OUTPUT_DIR/claude-output.json"

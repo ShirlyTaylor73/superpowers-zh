@@ -193,8 +193,8 @@ git worktree remove <worktree-path>
 ## 集成
 
 **被以下技能调用：**
-- **subagent-driven-development**（步骤 7）- 所有任务完成后
-- **executing-plans**（步骤 5）- 所有批次完成后
+- **parallel-executing-plans**（步骤 7）- 所有任务完成后
+- **serial-executing-plans**（步骤 5）- 所有批次完成后
 
 **配合使用：**
 - **using-git-worktrees** - 清理由该技能创建的工作树
