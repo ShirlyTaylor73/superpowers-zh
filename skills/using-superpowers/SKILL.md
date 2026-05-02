@@ -105,6 +105,8 @@ digraph skill_flow {
 
 "让我们构建 X" → 先头脑风暴，再使用实现技能。
 "修复这个 bug" → 先调试，再使用领域特定技能。
+"编写、修订、压缩、审查或修复实现计划/plan" → 使用 writing-plans。
+"修改现有实现计划、清理 plan 漂移、同步任务/metadata/并行执行图" → 使用 writing-plans。
 
 ## 中国特色技能路由
 

@@ -104,7 +104,7 @@ AI：在开始实现之前，我需要了解几个关键问题：
 | Skill | 用途 |
 |-------|------|
 | **头脑风暴** (brainstorming) | 需求分析 → 设计规格，不写代码先想清楚 |
-| **编写计划** (writing-plans) | 把规格拆成可执行的实施步骤 |
+| **编写计划** (writing-plans) | 创建或修订可执行计划，防止 plan 漂移 |
 | **串行执行计划** (serial-executing-plans) | 小计划或无子代理平台下按编号串行实施，每步验证 |
 | **测试驱动开发** (test-driven-development) | 严格 TDD：先写测试，再写代码 |
 | **系统化调试** (systematic-debugging) | 四阶段调试法：定位→分析→假设→修复 |

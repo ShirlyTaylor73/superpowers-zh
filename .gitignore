@@ -5,6 +5,7 @@
 node_modules/
 inspo
 triage/
+docs/superpowers/
 
 # 安装器生成的 skills 副本（源在 skills/ 目录）
 .codex/skills/
