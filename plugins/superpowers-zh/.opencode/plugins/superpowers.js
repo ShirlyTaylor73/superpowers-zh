@@ -32,12 +32,10 @@ const extractAndStripFrontmatter = (content) => {
   return { frontmatter, content: body };
 };
 
-export const SuperpowersPlugin = async ({ client, directory }) => {
-  const superpowersSkillsDir = path.resolve(__dirname, '../../plugins/superpowers-zh/skills');
+export const SuperpowersPlugin = async () => {
+  const superpowersSkillsDir = path.resolve(__dirname, '../../skills');
 
-  // Helper to generate bootstrap content
   const getBootstrapContent = () => {
-    // Try to load using-superpowers skill
     const skillPath = path.join(superpowersSkillsDir, 'using-superpowers', 'SKILL.md');
     if (!fs.existsSync(skillPath)) return null;
 
@@ -46,10 +44,10 @@ export const SuperpowersPlugin = async ({ client, directory }) => {
 
     const toolMapping = `**Tool Mapping for OpenCode:**
 When skills reference tools you don't have, substitute OpenCode equivalents:
-- \`TodoWrite\` → \`todowrite\`
-- \`Task\` tool with subagents → Use OpenCode's subagent system (@mention)
-- \`Skill\` tool → OpenCode's native \`skill\` tool
-- \`Read\`, \`Write\`, \`Edit\`, \`Bash\` → Your native tools
+- \`TodoWrite\` -> \`todowrite\`
+- \`Task\` tool with subagents -> Use OpenCode's subagent system (@mention)
+- \`Skill\` tool -> OpenCode's native \`skill\` tool
+- \`Read\`, \`Write\`, \`Edit\`, \`Bash\` -> Your native tools
 
 Use OpenCode's native \`skill\` tool to list and load skills.`;
 
@@ -65,10 +63,6 @@ ${toolMapping}
   };
 
   return {
-    // Inject skills path into live config so OpenCode discovers superpowers skills
-    // without requiring manual symlinks or config file edits.
-    // This works because Config.get() returns a cached singleton — modifications
-    // here are visible when skills are lazily discovered later.
     config: async (config) => {
       config.skills = config.skills || {};
       config.skills.paths = config.skills.paths || [];
@@ -77,17 +71,12 @@ ${toolMapping}
       }
     },
 
-    // Inject bootstrap into the first user message of each session.
-    // Using a user message instead of a system message avoids:
-    //   1. Token bloat from system messages repeated every turn (#750)
-    //   2. Multiple system messages breaking Qwen and other models (#894)
     'experimental.chat.messages.transform': async (_input, output) => {
       const bootstrap = getBootstrapContent();
       if (!bootstrap || !output.messages.length) return;
-      const firstUser = output.messages.find(m => m.info.role === 'user');
+      const firstUser = output.messages.find((message) => message.info.role === 'user');
       if (!firstUser || !firstUser.parts.length) return;
-      // Only inject once
-      if (firstUser.parts.some(p => p.type === 'text' && p.text.includes('EXTREMELY_IMPORTANT'))) return;
+      if (firstUser.parts.some((part) => part.type === 'text' && part.text.includes('EXTREMELY_IMPORTANT'))) return;
       const ref = firstUser.parts[0];
       firstUser.parts.unshift({ ...ref, type: 'text', text: bootstrap });
     }

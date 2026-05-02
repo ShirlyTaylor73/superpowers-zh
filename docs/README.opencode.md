@@ -4,7 +4,9 @@
 
 ## 安装
 
-在 `opencode.json`（全局或项目级）的 `plugin` 数组中添加：
+OpenCode 不读取本仓库的 Codex marketplace（`.agents/plugins/marketplace.json`）或 Claude marketplace（`.claude-plugin/marketplace.json`）。它通过 `opencode.json` 的 `plugin` 数组加载 Git 插件，并使用 `package.json` 的 `main` 入口。
+
+在全局或项目级 `opencode.json` 中添加：
 
 ```json
 {
@@ -12,94 +14,59 @@
 }
 ```
 
-重启 OpenCode。插件通过 Bun 自动安装并注册所有 skills。
+重启 OpenCode。插件会通过 `config` hook 自动注册 `plugins/superpowers-zh/skills`，无需手动符号链接。
 
-验证方式：问 "告诉我你有哪些 superpowers"
+验证方式：询问“告诉我你有哪些 superpowers”。
 
 ## 使用
 
-### 查找 Skills
+列出可用 skills：
 
-使用 OpenCode 原生的 `skill` 工具列出所有可用 skills：
-
-```
+```text
 use skill tool to list skills
 ```
 
-### 加载 Skill
+加载某个 skill：
 
-```
+```text
 use skill tool to load superpowers/brainstorming
 ```
 
-### 个人 Skills
-
-在 `~/.config/opencode/skills/` 中创建你自己的 skills：
-
-```bash
-mkdir -p ~/.config/opencode/skills/my-skill
-```
-
-创建 `~/.config/opencode/skills/my-skill/SKILL.md`：
-
-```markdown
----
-name: my-skill
-description: 当 [条件] 时使用 - [功能描述]
----
-
-# 我的 Skill
-
-[你的 skill 内容]
-```
-
-### 项目 Skills
-
-在项目的 `.opencode/skills/` 目录中创建项目级 skills。
-
-**Skill 优先级：** 项目 skills > 个人 skills > Superpowers skills
-
 ## 更新
 
-重启 OpenCode 时自动更新。插件每次启动都从 git 仓库重新安装。
+未锁定版本时，OpenCode 会在启动时按 Git 源更新插件。
 
 锁定特定版本：
 
 ```json
 {
-  "plugin": ["superpowers@git+https://github.com/ShirlyTaylor73/superpowers-zh.git#v1.0.0"]
+  "plugin": ["superpowers@git+https://github.com/ShirlyTaylor73/superpowers-zh.git#v1.1.9"]
 }
 ```
 
 ## 工作原理
 
+插件入口由 `package.json.main` 指向 `plugins/superpowers-zh/.opencode/plugins/superpowers.js`。
+
 插件做两件事：
 
-1. **注入引导上下文** — 通过 `experimental.chat.system.transform` hook，为每次对话添加 superpowers 意识
-2. **注册 skills 目录** — 通过 `config` hook，让 OpenCode 发现所有 skills，无需符号链接或手动配置
+1. 通过 `config` hook 把 `plugins/superpowers-zh/skills` 加入 OpenCode 的 skills 搜索路径。
+2. 通过 `experimental.chat.messages.transform` hook，把 `using-superpowers` 的引导上下文注入首个用户消息。
 
-### 工具映射
-
-为 Claude Code 编写的 skills 自动适配 OpenCode：
-
-- `TodoWrite` → `todowrite`
-- `Task`（子代理）→ OpenCode 的 `@mention` 系统
-- `Skill` 工具 → OpenCode 原生 `skill` 工具
-- 文件操作 → OpenCode 原生工具
+Claude/Codex 的 `plugins/superpowers-zh/hooks/*.json` 不会被 OpenCode 使用。
 
 ## 故障排查
 
-### 插件未加载
+如果插件未加载：
 
-1. 检查 OpenCode 日志：`opencode run --print-logs "hello" 2>&1 | grep -i superpowers`
-2. 确认 `opencode.json` 中的插件配置正确
-3. 确保运行的是最新版本的 OpenCode
+1. 检查 `opencode.json` 中的 `plugin` 配置。
+2. 运行 `opencode run --print-logs "hello"` 查看加载日志。
+3. 确认仓库中的 `package.json.main` 指向存在的 OpenCode 插件入口。
 
-### Skills 未找到
+如果 skills 未发现：
 
-1. 使用 `skill` 工具列出可用 skills
-2. 检查插件是否正确加载（见上）
-3. 每个 skill 需要包含有效 YAML frontmatter 的 `SKILL.md` 文件
+1. 使用 OpenCode 的 `skill` 工具列出可用 skills。
+2. 确认 `plugins/superpowers-zh/skills/using-superpowers/SKILL.md` 存在。
 
 ## 获取帮助
 
