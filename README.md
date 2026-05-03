@@ -259,6 +259,7 @@ cp -r superpowers-zh/plugins/superpowers-zh/skills /your/project/.claw/skills   
 - 原始英文版：[obra/superpowers](https://github.com/obra/superpowers)（MIT 协议）
 - 感谢 [@obra](https://github.com/obra) 创建了这个优秀的项目
 - 本项目基于中文上游项目: [jnMetaCode/superpowers-zh](https://github.com/jnMetaCode/superpowers-zh)（MIT 协议）二次开发
+- [Linux do](https://linux.do/)社区允许推广
 ---
 
 ## 许可证
