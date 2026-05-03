@@ -1,10 +1,23 @@
-# superpowers-zh（AI 编程超能力 · 中文增强版）
+# superpowers-zh（AI 编程超能力 · 中文二次增强版）
 
 🌐 **简体中文** | [English (upstream)](https://github.com/obra/superpowers)
 
-> 🦸 **superpowers（159k+ ⭐）完整汉化 + 6 个中国原创 skills** — 让 Claude Code / Copilot CLI / Hermes Agent / Cursor / Windsurf / Kiro / Gemini CLI 等 **17 款 AI 编程工具**真正会干活。从头脑风暴到代码审查，从 TDD 到调试，每个 skill 都是经过实战验证的工作方法论。
+> 🦸 本项目是基于**superpowers-zh汉化版superpowers的二次开发版本** — 优化了brainstorming，writing plan和subagent-driven-development 等多个skill使得开发流程更加高效和可靠。
 
 Chinese community edition of [superpowers](https://github.com/obra/superpowers) — 20 skills across 16 AI coding tools, including full translations and China-specific development skills.
+
+## ✨ v1.1.9 核心升级（vs 中文上游）
+
+在上游中文翻译版superpowers-zh方法论内核之上，做了**四项关键升级**：
+
+| 升级 | 一句话 |
+|------|--------|
+| 🔥 **头脑风暴 = 高强度盘问** | 吸收 grill-me 风格，分层遍历决策树 + 同深度批量发问，spec 一次到位不返工 |
+| ⚡ **单轮批量 ask user** | 在单轮问答中调用 ask user tool 进行批量提问，把多轮一问一答压成一次到位，**大大加速交互效率** |
+| 🌊 **多轮 Wave 并行执行** | parallel-executing-plans：**多轮 wave 并行**调度 subagent —— wave 内并发 + wave 间 gate + Wave FINAL 4 审（F1 规格 / F2 质量 / F3 手测 / F4 范围） |
+| 🛡️ **Plan 是执行手册** | writing-plans 明确 "plan 是执行手册" 的设计哲学：**设计原则 + 内容规定 + 机械化校验 + 新建 / 编辑双路径 skill 适配**，精简 plan、提升可读性与有效性 |
+
+> ✅ **已端到端实测：** 上述升级已在 **Claude Code** 与 **Codex CLI** 双平台跑通完整链路。
 
 <!-- 效果对比 -->
 <table>
@@ -58,6 +71,10 @@ AI：在开始实现之前，我需要了解几个关键问题：
 |------|----------------------|---------------------------|
 | ⭐ Star 数 | 159k+ | — |
 | 📦 Skills 总数 | 14 | **20**（14 翻译 + 6 国产原创） |
+| 🧠 **头脑风暴模式** | 普通对话式问答 | **分层决策树 + 同深度批量盘问 + 推荐选项 + 开放填空**（吸收 grill-me 风格） |
+| 💬 **用户交互方式** | 多轮一问一答 | **在单轮问答中调用 ask user tool 批量提问**，大大加速交互效率 |
+| 🌊 **计划执行调度** | 串行 subagent-driven | **多轮 wave 并行 + Wave FINAL 4 审 + 修复回路 3 次逃生口** |
+| 📝 **计划编辑哲学** | 一种 writing-plans | **plan 是执行手册：设计原则 + 内容规定 + 机械化校验 + 新建 / 编辑双路径**，防漂移、增可读 |
 | 🌐 语言 | 英文 | 中文（技术术语保留英文） |
 | 🤖 **支持工具** | **6 款**：Claude Code / Cursor / Codex / OpenCode / Copilot CLI / Gemini CLI | **17 款**：上述 6 款 + Hermes Agent / Trae / Kiro / Qwen Code（通义灵码）/ OpenClaw / Claw Code / Antigravity / DeerFlow / VS Code / Windsurf / Aider |
 | ⚡ **安装方式** | 按工具分别装（每款一条不同的 plugin marketplace 命令） | Claude Code 走 `/plugin marketplace add` 一并加载 hooks；其他 16 款工具克隆仓库后按目录手动放置 |
@@ -73,7 +90,7 @@ AI：在开始实现之前，我需要了解几个关键问题：
 | 💬 社区 | Discord | 微信公众号「AI不止语」+ 微信群 + QQ 群 |
 | 📜 License | MIT | MIT |
 
-**一句话总结：** 英文上游 = 方法论内核；中文增强版 = 方法论内核 **+** 17 款工具一键适配 **+** 国内 Git/CI 生态 **+** 中文化表达习惯。
+**一句话总结：** 英文上游 = 方法论内核；中文增强版 = **方法论内核升级版**（盘问 / 交互 / 调度 / 计划四升级） **+** 17 款工具一键适配 **+** 国内 Git/CI 生态 **+** 中文化表达习惯 **+** Claude Code & Codex 双 CLI 实测。
 
 ### 🤖 支持 17 款主流 AI 编程工具
 
@@ -104,7 +121,7 @@ AI：在开始实现之前，我需要了解几个关键问题：
 | Skill | 用途 |
 |-------|------|
 | **头脑风暴** (brainstorming) | 需求分析 → 设计规格，不写代码先想清楚 |
-| **编写计划** (writing-plans) | 创建或修订可执行计划，防止 plan 漂移 |
+| **编写计划** (writing-plans) | 新建 / 编辑双路径，原地替换 + metadata + 并行图机械化校验，防 plan 漂移 |
 | **串行执行计划** (serial-executing-plans) | 小计划或无子代理平台下按编号串行实施，每步验证 |
 | **测试驱动开发** (test-driven-development) | 严格 TDD：先写测试，再写代码 |
 | **系统化调试** (systematic-debugging) | 四阶段调试法：定位→分析→假设→修复 |
@@ -112,7 +129,7 @@ AI：在开始实现之前，我需要了解几个关键问题：
 | **接收代码审查** (receiving-code-review) | 技术严谨地处理审查反馈，拒绝敷衍 |
 | **完成前验证** (verification-before-completion) | 证据先行——声称完成前必须跑验证 |
 | **派遣并行 Agent** (dispatching-parallel-agents) | 多任务并发执行 |
-| **子 Agent 驱动开发** (parallel-executing-plans) | 大计划按 wave 并行调度子 agent，并进行 task-local 与 Wave FINAL 审查 |
+| **子 Agent 驱动开发** (parallel-executing-plans) | 大计划按多轮 wave 并行调度子 agent，task-local 审查 + Wave FINAL 4 审（F1/F2/F3/F4） |
 | **Git Worktree 使用** (using-git-worktrees) | 隔离式特性开发 |
 | **完成开发分支** (finishing-a-development-branch) | 合并/PR/保留/丢弃四选一 |
 | **编写 Skills** (writing-skills) | 创建新 skill 的方法论 |
@@ -131,9 +148,15 @@ AI：在开始实现之前，我需要了解几个关键问题：
 
 ---
 
+## ✅ 实测覆盖
+
+v1.1.9 已在 **Claude Code** 与 **Codex CLI** 两大主流 Agent CLI 上完成全链路验证 —— `brainstorming` → `writing-plans` → `parallel-executing-plans` → `finishing-a-development-branch` 全部跑通。两套独立的 plugin manifest（[`.claude-plugin/`](plugins/superpowers-zh/.claude-plugin/) + [`.codex-plugin/`](plugins/superpowers-zh/.codex-plugin/)）确保两边都能 `/plugin install` 一键到位，hooks 自动注入 SessionStart 上下文。
+
+---
+
 ## 快速开始
 
-### 方式一：插件市场安装（推荐 · 含 hooks）
+### 方式一：插件市场一键安装（Claude Code 和 Codex CLI 双平台实测 · 含 hooks）
 
 > 这是 Claude Code 和 Codex CLI 用户的**推荐方式**——除 skills 外还会一并加载 [`hooks/`](plugins/superpowers-zh/hooks/)（手动复制 skill 文件不会启用 hooks）。
 
@@ -146,7 +169,7 @@ AI：在开始实现之前，我需要了解几个关键问题：
 
 更新 / 卸载：`/plugin update superpowers-zh` · `/plugin uninstall superpowers-zh`
 
-**Codex CLI：** Codex CLI 自 2026-04 起已原生支持插件市场，参考 [Codex 官方插件文档](https://developers.openai.com/codex/plugins)。在终端执行：
+**Codex CLI：** **已与 Claude Code 同步实测，hooks 自动注入 SessionStart 上下文。** Codex CLI 自 2026-04 起已原生支持插件市场，参考 [Codex 官方插件文档](https://developers.openai.com/codex/plugins)。在终端执行：
 
 ```bash
 codex plugin marketplace add ShirlyTaylor73/superpowers-zh
@@ -230,22 +253,12 @@ cp -r superpowers-zh/plugins/superpowers-zh/skills /your/project/.claw/skills   
 
 ---
 
-## 交流 · Community
-
-微信公众号 **「AI不止语」**（微信搜索 `AI_BuZhiYu`）— 技术问答 · 项目更新 · 实战文章
-
-| 渠道 | 加入方式 |
-|------|---------|
-| QQ 2群 | [点击加入](https://qm.qq.com/q/EeNQA9xCxy)（群号 1071280067） |
-| 微信群 | 关注公众号后回复「群」获取入群方式 |
-
----
 
 ## 致谢
 
 - 原始英文版：[obra/superpowers](https://github.com/obra/superpowers)（MIT 协议）
 - 感谢 [@obra](https://github.com/obra) 创建了这个优秀的项目
-
+- 本项目基于中文上游项目: [jnMetaCode/superpowers-zh](https://github.com/jnMetaCode/superpowers-zh)（MIT 协议）二次开发
 ---
 
 ## 许可证
