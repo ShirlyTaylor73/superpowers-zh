@@ -1,4 +1,7 @@
 # superpowers-zh（AI 编程超能力 · 中文二次增强版）
+<p align="center">
+    <a href="https://linux.do" alt="LINUX DO"><img src="https://shorturl.at/ggSqS" /></a>
+</p>
 
 🌐 **简体中文** | [English (upstream)](https://github.com/obra/superpowers)
 
